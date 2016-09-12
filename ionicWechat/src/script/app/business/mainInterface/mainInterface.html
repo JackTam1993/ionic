@@ -2,8 +2,8 @@
     <ion-side-menus>
         <ion-side-menu-content>
             <ion-tabs class="tabs-stable tabs-icon-top">
-                <ion-tab title="预定" icon-on="ion-ios-paper" icon-off="ion-ios-paper-outline">
-                    <ion-view view-title="预定车票" cache-view="false">
+                <ion-tab title="首页" icon-on="ion-ios-paper" icon-off="ion-ios-paper-outline">
+                    <ion-view view-title="首页" cache-view="false" hide-nav-bar="false">
                         <ion-header-bar>
                             <ion-nav-bar>
                                 <ion-nav-buttons side="primary">
@@ -11,7 +11,7 @@
                                     </button>
                                 </ion-nav-buttons>
                                 <ion-nav-title>
-                                    <span>预定车票</span>
+                                    <span>首页</span>
                                 </ion-nav-title>
                             </ion-nav-bar>
                         </ion-header-bar>
@@ -36,49 +36,45 @@
                             <ion-list style="margin-bottom:12px">
                                 <ion-item>
                                     <div class="list">
-                                        <label class="item item-input item-select">
-                                            <div class="input-label">
-                                                起点
-                                            </div>
-                                            <select>
-                                                <option>广州</option>
-                                                <option selected>深圳</option>
-                                                <option>中山</option>
-                                            </select>
-                                        </label>
-                                    </div>
-                                    <div class="text-center">
-                                        <Image src="assets/images/haungou.png" style="width:50px;margin-top:-12px"/>
+                                        <a class="item item-avatar" href="#">
+                                            <img src="../../../../../assets/images/main_rocket.png">
+                                            <h2>快速签约登记</h2>
+                                            <p>快速建立与家庭医生的签约关系</p>
+                                        </a>
                                     </div>
                                     <div>
-                                        <label class="item item-input item-select">
-                                            <div class="input-label">
-                                                终点
-                                            </div>
-                                            <select style="width:100px">
-                                                <option>惠州</option>
-                                                <option>珠海</option>
-                                                <option selected>佛山</option>
-                                            </select>
-                                        </label>
+                                        <div class="row" id="three_icons">
+                                        <div class="col col-33" ng-click="">
+                                            <img src="../../../../../assets/images/main_sign.png">
+                                            <p>签约管理</p>
+                                        </div>
+                                        <div class="col col-33" ng-click="openJtsf()">
+                                            <img src="../../../../../assets/images/jtsf.png">
+                                            <p>家庭随访</p>
+                                        </div>
+                                        <div class="col col-33" ng-click="">
+                                            <img src="../../../../../assets/images/mywork.png">
+                                            <p>我的工作</p>
+                                        </div>
+                                        </div>
                                     </div>
                                 </ion-item>
                             </ion-list>
-                            <ion-list>
+                            <!-- <ion-list>
                                 <ion-item>
-                                    <button class="button button-assertive button-block" ng-click="openDatePicker()">日期控件</button>
+                                    <button class="button button-balanced button-block" ng-click="openDatePicker()">日期控件</button>
                                 </ion-item>
-                            </ion-list>
+                            </ion-list> -->
                             <ion-list>
                                 <ion-item>
-                                    <button ng-click="openModal1()" class="button button-assertive button-block">阅读相关规定</button>
+                                    <button ng-click="openModal1()" class="button button-balanced button-block">阅读相关规定</button>
                                     <div class="ion-checkmark-round color_red text-center" ng-show="check"></div>
                                 </ion-item>
                             </ion-list>
                         </ion-content>
                     </ion-view>
                 </ion-tab>
-                <ion-tab title="出行" icon-on="ion-ios-paw" icon-off="ion-ios-paw-outline">
+                <ion-tab title="知识库"  icon-on="ion-ios-paper" icon-off="ion-ios-paper-outline">
                     <ion-view cache-view="false">
                         <ion-header-bar>
                             <ion-nav-bar>
@@ -87,22 +83,34 @@
                                     </button>
                                 </ion-nav-buttons>
                                 <ion-nav-buttons side="secondary">
-                                    <button class="button button-icon icon ion-ios-search-strong"
+                                    <button class="button button-icon icon ion-ios-search-strong hide"
                                             ng-click="showFilterBar()">
                                     </button>
                                 </ion-nav-buttons>
                                 <ion-nav-title>
-                                    <span>itemList</span>
+                                    <span>知识库</span>
                                 </ion-nav-title>
                             </ion-nav-bar>
                         </ion-header-bar>
-                        <ion-content has-tabs="true" overflow-scroll='true' style="background: #efefef;" scroll="true"
-                                     direction="y">
+                        <ion-header-bar class="bar-subheader">
+                        <div id="subheader_button_in_main">
+                            <button class="button button-balanced">慢性病</button>
+                            <button class="button button-balanced">公卫包</button>
+                            <button class="button button-balanced">基本医疗</button>
+                        </div>
+                        </ion-header-bar>
+                        <ion-content has-tabs="true" overflow-scroll='true' style="background: #efefef;" scroll="true" direction="y">
                             <ion-list>
-                                <ion-item collection-repeat="item in items" ng-click="goToItemDetail(item)">
-                                    {{item}}
-                                    <ion-option-button class="button-positive">...</ion-option-button>
+                                <ion-item class="item-thumbnail-left" collection-repeat="item in items" style="overflow:hidden">
+                                    <img src="assets/images/zsk_pic.png">
+                                    <h2>{{item}}</h2>
+                                    <p>糖尿病防治指南</p>
+                                    <ion-option-button class="button-positive">删除</ion-option-button>
                                 </ion-item>
+                                <!-- <ion-item collection-repeat="item in items" ng-click="goToItemDetail(item)">
+                                    {{item}}
+                                    <ion-option-button class="button-positive">删除</ion-option-button>
+                                </ion-item> -->
                             </ion-list>
                             <div ng-if="items !== undefined && !items.length" class="no-results">
                                 <p>No Results</p>
@@ -118,102 +126,53 @@
                                     <button class="button button-icon icon ion-navicon-round" menu-toggle="left">
                                     </button>
                                 </ion-nav-buttons>
+                                <ion-nav-title>
+                                    <span>我的</span>
+                                </ion-nav-title>
                             </ion-nav-bar>
-                            <h1 class="title">我的</h1>
                         </ion-header-bar>
                         <ion-content overflow-scroll='true' style="background: #efefef" scroll="true"
                                      direction="y">
-                            <ion-list >
-                                <ion-item>
-                                    <ion-spinner icon="spiral"></ion-spinner>
-                                    <ion-option-button style="padding: 0 30px;" class="button-positive icon ion-edit"
-                                    >编辑
-                                    </ion-option-button>
-                                    <ion-option-button style="padding: 0 30px;"
-                                                       class="button-assertive icon ion-ios-trash-outline">
-                                        移除
-                                    </ion-option-button>
-                                </ion-item>
-                                <ion-item>
-                                    <ion-spinner icon="android"></ion-spinner>
-                                    <ion-option-button style="padding: 0 30px;" class="button-positive icon ion-edit"
-                                    >编辑
-                                    </ion-option-button>
-                                    <ion-option-button style="padding: 0 30px;"
-                                                       class="button-assertive icon ion-ios-trash-outline">
-                                        移除
-                                    </ion-option-button>
-                                </ion-item>
-                                <ion-item>
-                                    <ion-spinner icon="ios"></ion-spinner>
-                                    <ion-option-button style="padding: 0 30px;" class="button-positive icon ion-edit"
-                                    >编辑
-                                    </ion-option-button>
-                                    <ion-option-button style="padding: 0 30px;"
-                                                       class="button-assertive icon ion-ios-trash-outline">
-                                        移除
-                                    </ion-option-button>
-                                </ion-item>
-                                <ion-item>
-                                    <ion-spinner icon="ios-small"></ion-spinner>
-                                    <ion-option-button style="padding: 0 30px;" class="button-positive icon ion-edit"
-                                    >编辑
-                                    </ion-option-button>
-                                    <ion-option-button style="padding: 0 30px;"
-                                                       class="button-assertive icon ion-ios-trash-outline">
-                                        移除
-                                    </ion-option-button>
-                                </ion-item>
-                                <ion-item>
-                                    <ion-spinner icon="bubbles"></ion-spinner>
-                                    <ion-option-button style="padding: 0 30px;" class="button-positive icon ion-edit"
-                                    >编辑
-                                    </ion-option-button>
-                                    <ion-option-button style="padding: 0 30px;"
-                                                       class="button-assertive icon ion-ios-trash-outline">
-                                        移除
-                                    </ion-option-button>
-                                </ion-item>
-                                <ion-item>
-                                    <ion-spinner icon="circles"></ion-spinner>
-                                    <ion-option-button style="padding: 0 30px;" class="button-positive icon ion-edit"
-                                    >编辑
-                                    </ion-option-button>
-                                    <ion-option-button style="padding: 0 30px;"
-                                                       class="button-assertive icon ion-ios-trash-outline">
-                                        移除
-                                    </ion-option-button>
-                                </ion-item>
-                                <ion-item>
-                                    <ion-spinner icon="lines"></ion-spinner>
-                                    <ion-option-button style="padding: 0 30px;" class="button-positive icon ion-edit"
-                                    >编辑
-                                    </ion-option-button>
-                                    <ion-option-button style="padding: 0 30px;"
-                                                       class="button-assertive icon ion-ios-trash-outline">
-                                        移除
-                                    </ion-option-button>
-                                </ion-item>
-                                <ion-item>
-                                    <ion-spinner icon="ripple"></ion-spinner>
-                                    <ion-option-button style="padding: 0 30px;" class="button-positive icon ion-edit"
-                                    >编辑
-                                    </ion-option-button>
-                                    <ion-option-button style="padding: 0 30px;"
-                                                       class="button-assertive icon ion-ios-trash-outline">
-                                        移除
-                                    </ion-option-button>
-                                </ion-item>
-                                <ion-item>
-                                    <ion-spinner icon="dots"></ion-spinner>
-                                    <ion-option-button style="padding: 0 30px;" class="button-positive icon ion-edit"
-                                    >编辑
-                                    </ion-option-button>
-                                    <ion-option-button style="padding: 0 30px;"
-                                                       class="button-assertive icon ion-ios-trash-outline">
-                                        移除
-                                    </ion-option-button>
-                                </ion-item>
+                        <ion-list>
+                            <a class="item item-avatar">
+                                <img src="../../../../../assets/images/head.png">
+                                <h2>{{}}医生，你好</h2>
+                            </a>
+                            <div class="item item-divider">
+                                
+                            </div>
+                            <a class="item item-avatar">
+                                <img src="../../../../../assets/images/myteam.png">
+                                <h2>{{}}医生，你好</h2>
+                            </a>
+                            <div class="item item-divider">
+                                
+                            </div>
+                            <a class="item item-avatar">
+                                <img src="../../../../../assets/images/scan.png">
+                                <h2>扫二维码</h2>
+                            </a>
+                            <a class="item item-avatar">
+                                <img src="../../../../../assets/images/share.png">
+                                <h2>软件分享</h2>
+                            </a>
+                            <div class="item item-divider">
+                                
+                            </div>
+                            <a class="item item-avatar">
+                                <img src="../../../../../assets/images/about.png">
+                                <h2>关于壹家医保</h2>
+                            </a>
+                            <a class="item item-avatar">
+                                <img src="../../../../../assets/images/setting.png">
+                                <h2>系统设置</h2>
+                            </a>
+                            <div class="item item-divider">
+                                
+                            </div>
+                            <a class="item" ng-click="showConfirm()">
+                                <h2 style="text-align:center;">退出</h2>
+                            </a>
                             </ion-list>
                         </ion-content>
                     </ion-view>
@@ -231,15 +190,15 @@
                 </ion-header-bar>
                 <ion-content>
                     <ion-list>
-                        <ion-checkbox>Red</ion-checkbox>
-                        <ion-checkbox>Yellow</ion-checkbox>
-                        <ion-checkbox>Pink</ion-checkbox>
+                        <ion-checkbox>选项1</ion-checkbox>
+                        <ion-checkbox>选项1</ion-checkbox>
+                        <ion-checkbox>选项1</ion-checkbox>
                         <ion-radio ng-model="choice" ng-value="'A'">Choose A</ion-radio>
                         <ion-radio ng-model="choice" ng-value="'B'">Choose B</ion-radio>
                         <ion-radio ng-model="choice" ng-value="'C'">Choose C</ion-radio>
                         <ion-toggle ng-model="airplaneMode">Airplane Mode</ion-toggle>
                     </ion-list>
-                    <button class="button button-assertive button-block button-full" style="position: absolute;bottom: -6px;"
+                    <button class="button button-balanced button-block button-full" style="position: absolute;bottom: -6px;"
                             ng-click="showConfirm()">
                         退出
                     </button>
@@ -264,10 +223,10 @@
         <ion-content>
             <ion-list>
                 <ion-item>
-                    <p>鲁智深因见山水秀丽，贪行了半日，赶不上宿头，路中又没人作伴，那里投宿是好。又赶了三二十里田地，过了一条板桥，远远地望见一簇红霞，树木丛中，闪着一所庄院。庄后重重叠叠，都是乱山。鲁智深道：“只得投庄上去借宿。”迳奔到庄前看时，见数十个庄家，忙忙急急，搬东搬西。鲁智深到庄前，倚了禅杖，与庄客打个问讯。庄客道：“和尚，日晚来我庄上做甚的？”智深道：“小僧赶不上宿头，欲借贵庄投宿一宵，明早便行。”庄客道：“我庄上今夜有事，歇不得。”智深道：“胡乱借洒家歇一夜，明日便行。”庄客道：“和尚快走，休在这里讨死。”智深道：“也是怪哉！歇一夜打甚么不紧，怎地便是讨死？”庄家道：“去便去，不去时，便捉来缚在这里。”鲁智深大怒道：“你这厮村人，好没道理！俺又不曾说甚的，便要绑缚洒家。”庄家们也有骂的，也有劝的。鲁智深提起禅杖，却待要发作，只见庄里走出一个老人来。但见：主髭须似雪，发鬓如霜。行时腰曲头低，坐后耳聋眼暗。头裹三山暖帽，足穿四缝宽靴。腰间绦系佛头青，身上罗衫鱼肚白。好似山前都土地，正如海底老龙君。</p>
+                    <p>null</p>
                 </ion-item>
             </ion-list>
-            <button style="position:absolute;bottom:0" class="button button-assertive button-block" ng-click="confirmRoles()">确认</button>
+            <button style="position:absolute;bottom:0" class="button button-balanced button-block" ng-click="confirmRoles()">确认</button>
         </ion-content>
     </ion-modal-view>
 </script>

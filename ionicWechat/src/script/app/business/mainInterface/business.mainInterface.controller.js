@@ -4,8 +4,10 @@
  */
 (function () {
     angular.module("app.business")
-        .controller("BusinessMainInterfaceCtrl", ['$scope', '$stateParams', '$cookieStore', '$state', '$ionicFilterBar','ionicDatePicker', '$ionicSideMenuDelegate', '$ionicPopup','$ionicModal', BusinessMainInterfaceCtrl]);
-    function BusinessMainInterfaceCtrl($scope, $stateParams, $cookieStore, $state, $ionicFilterBar,ionicDatePicker, $ionicSideMenuDelegate, $ionicPopup,$ionicModal) {
+        .controller("BusinessMainInterfaceCtrl", ['$scope', '$stateParams', '$cookieStore', '$state', '$ionicFilterBar','ionicDatePicker', '$ionicSideMenuDelegate', '$ionicPopup','$ionicModal','$ionicNavBarDelegate', BusinessMainInterfaceCtrl]);
+    function BusinessMainInterfaceCtrl($scope, $stateParams, $cookieStore, $state, $ionicFilterBar,ionicDatePicker, $ionicSideMenuDelegate, $ionicPopup,$ionicModal,$ionicNavBarDelegate) {
+       // $ionicNavBarDelegate.showBar(true);
+
         $scope.myName = $stateParams.name == null ? $cookieStore.get('username') : $stateParams.name;
         if ($scope.myName == null) {
             $scope.myName = $cookieStore.get('username');
@@ -73,7 +75,7 @@
                     }
                 },{
                     text:"确定",
-                    type:"button-assertive",
+                    type:"button-balanced",
                     onTap: function (e) {
                         $scope.clearCache();
                     }
@@ -107,6 +109,9 @@
         $scope.openDatePicker = function(){
             ionicDatePicker.openDatePicker(ipObj1);
         };
+        $scope.openJtsf = function(){
+            $state.go("jtsf");
+        }
 
         //modal
         //弹出提示信息

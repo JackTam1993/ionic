@@ -4,8 +4,9 @@
  */
 (function () {
     angular.module("app.business")
-        .controller("BusinessLoginCtrl",['$cookieStore','$scope','$state','$ionicLoading','$timeout',BusinessLoginCtrl]);
-    function BusinessLoginCtrl($cookieStore,$scope,$state,$ionicLoading,$timeout){
+        .controller("BusinessLoginCtrl",['$cookieStore','$scope','$state','$ionicLoading','$timeout','BusinessLoginService',BusinessLoginCtrl]);
+    function BusinessLoginCtrl($cookieStore,$scope,$state,$ionicLoading,$timeout,BusinessLoginService){
+        
         $scope.info = {
             phone:"",
             password:""
