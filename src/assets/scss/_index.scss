@@ -9,8 +9,10 @@
 .font_18{font-size:18px;}
 .color_red{color:#ff5858;}
 .color_white{color:#fff;}
+.color_blue{color:#17bddf}
 .float_none{float:none;}
 .background_red{background:#ff5858;}
+.background_blue{background:#17bddf;}
 .background_white{background:#fff;}
 .margin_auto{margin:auto;}
 .margin_top{margin-top:10px;}
@@ -55,7 +57,7 @@
     }
   }
   .login_btn{
-    @extend .background_red;
+    @extend .background_blue;
     @extend .border_none;
     @extend .border_radius;
     color:#fff;

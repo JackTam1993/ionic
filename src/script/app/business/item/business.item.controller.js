@@ -5,10 +5,8 @@
 (function () {
     angular.module("app.business")
         .controller("BusinessItemCtrl",['$scope','$stateParams','$state',BusinessItemCtrl]);
-        function BusinessItemCtrl($scope,$stateParams,$state){
+        function BusinessItemCtrl($scope,$stateParams,$state,publicService){
             $scope.itemName = $stateParams.itemName;
-            $scope.goBack = function () {
-                $state.go('BusinessMainInterface');
-            }
+            
         }
 })();

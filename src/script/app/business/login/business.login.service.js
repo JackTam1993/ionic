@@ -6,6 +6,6 @@
     angular.module("app.business")
         .service("BusinessLoginService", ['$http', 'appConfig', '$q', 'CacheFactory', BusinessLoginService]);
         function BusinessLoginService($http, appConfig, $q, CacheFactory){
-
+        	
         }
 })();
