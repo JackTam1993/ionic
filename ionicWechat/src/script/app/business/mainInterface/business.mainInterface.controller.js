@@ -4,8 +4,8 @@
  */
 (function () {
     angular.module("app.business")
-        .controller("BusinessMainInterfaceCtrl", ['$scope', '$stateParams', '$cookieStore', '$state', '$ionicFilterBar','ionicDatePicker', '$ionicSideMenuDelegate', '$ionicPopup','$ionicModal','$ionicNavBarDelegate', BusinessMainInterfaceCtrl]);
-    function BusinessMainInterfaceCtrl($scope, $stateParams, $cookieStore, $state, $ionicFilterBar,ionicDatePicker, $ionicSideMenuDelegate, $ionicPopup,$ionicModal,$ionicNavBarDelegate) {
+        .controller("BusinessMainInterfaceCtrl", ['$scope', '$stateParams', '$cookieStore', '$state', '$ionicFilterBar','ionicDatePicker', '$ionicPopup','$ionicModal','$ionicNavBarDelegate', BusinessMainInterfaceCtrl]);
+    function BusinessMainInterfaceCtrl($scope, $stateParams, $cookieStore, $state, $ionicFilterBar,ionicDatePicker, $ionicPopup,$ionicModal,$ionicNavBarDelegate) {
        // $ionicNavBarDelegate.showBar(true);
 
         $scope.myName = $stateParams.name == null ? $cookieStore.get('username') : $stateParams.name;
@@ -59,9 +59,9 @@
             $state.go('BusinessItem', {itemName: item.text});
         }
 
-        $scope.toggleLeft = function () {
-            $ionicSideMenuDelegate.toggleLeft();
-        };
+        // $scope.toggleLeft = function () {
+        //     $ionicSideMenuDelegate.toggleLeft();
+        // };
 
         $scope.showConfirm = function () {
             var confirmPopup = $ionicPopup.confirm({
@@ -82,6 +82,9 @@
                 }]
             });
         };
+        // document.addEventListener("touchmove",function(e){
+        // e.preventDefault();
+        // });
 
         //日历控件
         var ipObj1 = {
