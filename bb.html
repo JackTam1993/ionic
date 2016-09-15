@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>myFirstAngular</title>
+	<script type="text/javascript"></script>
+	<script src="angular.min.js"></script>
+    <script src="angular-route.min.js"></script>
+</head> 
+<body ng-app="mainAPP">
+    <div ng-controller="a_controller">
+    	<div>
+    		<table>
+    			<thead>
+    				<th>id</th>
+    				<th>name</th>
+    				<th>classNum</th>
+                    <th>choose</th>
+    			</thead>
+    			<tbody ng-repeat="id in information">
+    				<td>{{id.id}}</td>
+    				<td>{{id.name}}</td>
+    				<td>{{id.classNum}}</td>
+                    <td><button ng-click="toProducer()">{{id.id}}</button></td>
+    			</tbody>
+    		</table>
+    	</div>
+    </div>
+</body>
+<script>
+	var mainAPP = angular.module('mainAPP', {
+            $stateProvider
+            .state('destination',{
+            templateUrl:'destination.html'
+           })
+        })
+	mainAPP.controller('a_controller', ['$scope', function($scope){
+		$scope.information = [{id:'1',name:'jack1',classNum:'1'},{id:'2',name:'jack2',classNum:'1'},{id:'3',name:'jack3',classNum:'2'},{id:'4',name:'jack4',classNum:'2'},{id:'5',name:'jack5',classNum:'3'},{id:'6',name:'jack6',classNum:'3'},{id:'7',name:'jack7',classNum:'4'},{id:'8',name:'jack8',classNum:'4'},{id:'9',name:'jack9',classNum:'5'}]
+        
+        $scope.toProducer = function(producerId){
+            $state.go('destination',{producerId:producerId})
+        }
+	}])
+</script>
+</html>
