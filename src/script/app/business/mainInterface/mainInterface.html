@@ -1,14 +1,14 @@
 <ion-view view-title="首页" cache-view="false">
     <ion-side-menus>
-        <ion-side-menu-content>
+        <ion-side-menu-content drag-content="false">
             <ion-tabs class="tabs-stable tabs-icon-top">
                 <ion-tab title="首页" icon-on="ion-ios-paper" icon-off="ion-ios-paper-outline">
                     <ion-view view-title="首页" cache-view="false" hide-nav-bar="false">
                         <ion-header-bar>
                             <ion-nav-bar>
                                 <ion-nav-buttons side="primary">
-                                    <button class="button button-icon icon ion-navicon-round" menu-toggle="left">
-                                    </button>
+                                    <!-- <button class="button button-icon icon ion-navicon-round" menu-toggle="left">
+                                    </button> -->
                                 </ion-nav-buttons>
                                 <ion-nav-title>
                                     <span>首页</span>
@@ -88,23 +88,23 @@
                                     </button>
                                 </ion-nav-buttons>
                                 <ion-nav-title>
-                                    <span>知识库</span>
+                                    <span>{{firstClassKeshiName}}</span>
                                 </ion-nav-title>
                             </ion-nav-bar>
                         </ion-header-bar>
                         <ion-header-bar class="bar-subheader">
-                        <div id="subheader_button_in_main">
-                            <button class="button button-balanced">慢性病</button>
-                            <button class="button button-balanced">公卫包</button>
-                            <button class="button button-balanced">基本医疗</button>
+                        <ion-scroll direction="x" style="width: 100%; height: 4em;white-space: nowrap;">
+                        <div style="width: 120%; height: 4em; cursor: url(), auto;">
+                            <button class="button button" ng-repeat="keshi in secondClassKeshi.result" ng-click="refreshThirdKeshi(keshi)">{{keshi.directory_name}}</button>
                         </div>
+                        </ion-scroll>
                         </ion-header-bar>
                         <ion-content has-tabs="true" overflow-scroll='true' style="background: #efefef;" scroll="true" direction="y">
-                            <ion-list>
-                                <ion-item class="item-thumbnail-left" collection-repeat="item in items" style="overflow:hidden">
+                            <ion-list can-swipe="listCanSwipe">
+                                <ion-item class="item-thumbnail-left" ng-repeat="keshi in thirdClassKeshi.result" style="overflow:hidden">
                                     <img src="assets/images/zsk_pic.png">
-                                    <h2>{{item}}</h2>
-                                    <p>糖尿病防治指南</p>
+                                    <h2>{{keshi.content_name}}</h2>
+                                    <p>{{keshi.create_time}}</p>
                                     <ion-option-button class="button-positive">删除</ion-option-button>
                                 </ion-item>
                                 <!-- <ion-item collection-repeat="item in items" ng-click="goToItemDetail(item)">
@@ -123,8 +123,7 @@
                         <ion-header-bar class="bar-stable">
                             <ion-nav-bar>
                                 <ion-nav-buttons side="primary">
-                                    <button class="button button-icon icon ion-navicon-round" menu-toggle="left">
-                                    </button>
+                                    
                                 </ion-nav-buttons>
                                 <ion-nav-title>
                                     <span>我的</span>
@@ -190,18 +189,8 @@
                 </ion-header-bar>
                 <ion-content>
                     <ion-list>
-                        <ion-checkbox>选项1</ion-checkbox>
-                        <ion-checkbox>选项1</ion-checkbox>
-                        <ion-checkbox>选项1</ion-checkbox>
-                        <ion-radio ng-model="choice" ng-value="'A'">Choose A</ion-radio>
-                        <ion-radio ng-model="choice" ng-value="'B'">Choose B</ion-radio>
-                        <ion-radio ng-model="choice" ng-value="'C'">Choose C</ion-radio>
-                        <ion-toggle ng-model="airplaneMode">Airplane Mode</ion-toggle>
+                        <ion-item menu-close href="#" ng-repeat="keshi in firstClassKeshi.result" ng-click="refreshKnowledge(keshi)">{{keshi.directory_name}}</ion-item>
                     </ion-list>
-                    <button class="button button-balanced button-block button-full" style="position: absolute;bottom: -6px;"
-                            ng-click="showConfirm()">
-                        退出
-                    </button>
                 </ion-content>
             </ion-view>
         </ion-side-menu>

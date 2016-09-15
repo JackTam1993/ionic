@@ -4,9 +4,8 @@
  */
 (function () {
     angular.module("app.business")
-        .controller("BusinessMainInterfaceCtrl", ['$scope', '$stateParams', '$cookieStore', '$state', '$ionicFilterBar','ionicDatePicker', '$ionicSideMenuDelegate', '$ionicPopup','$ionicModal','$ionicNavBarDelegate', BusinessMainInterfaceCtrl]);
-    function BusinessMainInterfaceCtrl($scope, $stateParams, $cookieStore, $state, $ionicFilterBar,ionicDatePicker, $ionicSideMenuDelegate, $ionicPopup,$ionicModal,$ionicNavBarDelegate) {
-       // $ionicNavBarDelegate.showBar(true);
+        .controller("BusinessMainInterfaceCtrl", ['$scope', '$stateParams', '$cookieStore', '$state', '$ionicFilterBar','ionicDatePicker', '$ionicPopup','$ionicModal','$ionicNavBarDelegate','$http', BusinessMainInterfaceCtrl]);
+    function BusinessMainInterfaceCtrl($scope, $stateParams, $cookieStore, $state, $ionicFilterBar,ionicDatePicker, $ionicPopup,$ionicModal,$ionicNavBarDelegate,$http) {
 
         $scope.myName = $stateParams.name == null ? $cookieStore.get('username') : $stateParams.name;
         if ($scope.myName == null) {
@@ -30,6 +29,67 @@
         }
 
         getItems();
+        
+        // var url = 'http://61.28.113.182:2082/yjyb/knowledge/querycontent?directory_id=5';
+        // var itemofKnowledge;
+        // $http.get(url).success(function(response){
+        //      $scope.itemofKnowledge = response;
+        // })
+
+        function getFirstClassKeshi(parentid){
+        $http.get('http://61.28.113.182:2082/yjyb/knowledge/query?parent_id='+parentid).success(function(response){
+              $scope.firstClassKeshi = response;
+
+              $scope.firstClassKeshiName = $scope.firstClassKeshi.result[0].directory_name;
+              })
+        }
+        getFirstClassKeshi(0);
+
+        function getSecondClassKeshi(parentid){
+        $http.get('http://61.28.113.182:2082/yjyb/knowledge/querychild?parent_id='+parentid).success(function(response){
+              $scope.secondClassKeshi = response;
+              
+              })
+        }
+        getSecondClassKeshi(44);
+
+        function getThirdClassKeshi(directoryid){
+        $http.get('http://61.28.113.182:2082/yjyb/knowledge/querycontent?directory_id='+directoryid).success(function(response){
+              $scope.thirdClassKeshi = response;
+              console.log($scope.thirdClassKeshi);
+              })
+        }
+        getThirdClassKeshi(53);
+
+        $scope.refreshKnowledge = function(e){
+              if(e.directory_id == 44){
+                   getSecondClassKeshi(44);
+                   getThirdClassKeshi(53)
+                   $scope.firstClassKeshiName = e.directory_name;
+              }
+              else {getSecondClassKeshi(2);
+                getThirdClassKeshi(8);
+                $scope.firstClassKeshiName = e.directory_name;
+           }
+        }
+        $scope.refreshThirdKeshi = function(e){
+            if(e.directory_id==8){
+                getThirdClassKeshi(8)
+            }
+            else if(e.directory_id==1){
+                getThirdClassKeshi(1)
+            }
+            else if(e.directory_id==4){
+                getThirdClassKeshi(4)
+            }
+            else if(e.directory_id==7){
+                getThirdClassKeshi(7)
+            }
+
+                   console.log(e);
+            
+        }
+             
 
         $scope.showFilterBar = function () {
             filterBarInstance = $ionicFilterBar.show({
@@ -59,9 +119,9 @@
             $state.go('BusinessItem', {itemName: item.text});
         }
 
-        $scope.toggleLeft = function () {
-            $ionicSideMenuDelegate.toggleLeft();
-        };
+        // $scope.toggleLeft = function () {
+        //     $ionicSideMenuDelegate.toggleLeft();
+        // };
 
         $scope.showConfirm = function () {
             var confirmPopup = $ionicPopup.confirm({
@@ -82,6 +142,9 @@
                 }]
             });
         };
+        // document.addEventListener("touchmove",function(e){
+        // e.preventDefault();
+        // });
 
         //日历控件
         var ipObj1 = {
@@ -145,5 +208,6 @@
             $scope.check = true;
             $scope.closeModal1();
         }
+
     }
 })();

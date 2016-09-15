@@ -24,7 +24,7 @@
                 return $cookies.get("phone") != null;
             },
             getDeliveryAddress: function () {
-                var e = "/deliveryAddress/addresslist.api";
+                var e = "";
                 var d = $q.defer();
                 if (!this.isLogin())
                     d.resolve([]); 
