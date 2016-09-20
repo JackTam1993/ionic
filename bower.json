@@ -1,7 +1,8 @@
 {
   "name": "ionicproject",
   "authors": [
-    "syun"
+    "syun",
+    "jack Tam"
   ],
   "description": "",
   "main": "",
@@ -24,6 +25,8 @@
     "ionic-filter-bar": "^1.1.1",
     "ionic-datepicker": "~1.1.0",
     "jquery": "^2.2.3",
-    "ng-file-upload": "~12.0.4"
+    "ng-file-upload": "~12.0.4",
+    "angular-pdf-viewer": "^0.2.9",
+    "ng-pdfviewer": "^0.2.1"
   }
 }

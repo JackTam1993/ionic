@@ -14,13 +14,14 @@
             {
                 name: 'BusinessMainInterface',
                 ctrl: 'BusinessMainInterfaceCtrl',
-                url: 'business/mainInterface/:name',
-                tpl: 'business/mainInterface/mainInterface'
+                url: 'business/knowledge',
+                tpl: 'business/knowledge/knowledge'
             },
             {name:'BusinessItem',ctrl:'BusinessItemCtrl',url:'business/item/:itemName',tpl:'business/item/item'},
              {name:'changepasswd',ctrl:'changepasswdCtrl',url:'business/changepasswd/:name',tpl:'business/changepasswd/changepasswd'},
              {name:'jtsf',ctrl:'jtsfCtrl',url:'business/jtsf/:name',tpl:'business/jtsf/jtsf'},
-             {name:'gxysf',ctrl:'gxysfCtrl',url:'business/gxysf/:name',tpl:'business/gxysf/gxysf'}
+             {name:'gxysf',ctrl:'gxysfCtrl',url:'business/gxysf/:name',tpl:'business/gxysf/gxysf'},
+             {name:'pdf',ctrl:'pdfCtrl',url:'business/pdf',tpl:'business/pdf/generic/web/viewer'}
         ];
 
         setRoutes = function (route) {
@@ -40,7 +41,7 @@
         });
 
 
-        $urlRouterProvider.otherwise('/business/login');
+        $urlRouterProvider.otherwise('/business/knowledge');
 
     }
 })();

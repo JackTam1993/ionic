@@ -9,4 +9,5 @@
         $scope.civilian = gxysfService.civilian;
        
     }
-})()
+    gxysfCtrl.$inject = ['$scope','$state','gxysfService'];
+})();

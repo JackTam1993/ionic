@@ -7,9 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "init": "npm install"
   },
-    "dependencies": {
+  "dependencies": {
     "gulp-concat": "^2.6.0",
-    "ionic": "^1.7.14"
+    "ionic": "^1.7.14",
+    "pdfjs-dist": "^1.5.476"
   },
   "devDependencies": {
     "browser-sync": "~2.9.0",

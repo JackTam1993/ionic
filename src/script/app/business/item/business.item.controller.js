@@ -5,7 +5,7 @@
 (function () {
     angular.module("app.business")
         .controller("BusinessItemCtrl",['$scope','$stateParams','$state',BusinessItemCtrl]);
-        function BusinessItemCtrl($scope,$stateParams,$state,publicService){
+        function BusinessItemCtrl($scope,$stateParams,$state){
             $scope.itemName = $stateParams.itemName;
             
         }

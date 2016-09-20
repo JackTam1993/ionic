@@ -8,5 +8,6 @@
         'app.core',
         'jett.ionic.filter.bar',
         'ionic-datepicker'
+        // 'pdf'
     ])
 })();

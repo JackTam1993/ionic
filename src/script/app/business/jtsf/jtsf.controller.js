@@ -6,7 +6,8 @@
             $state.go('BusinessMainInterface');
         }
         $scope.openGxysf = function () {
-            $state.go('gxysf')
+            $state.go('gxysf');
         }
    }
-})()
+   jtsfCtrl.$inject = ['$scope','$state'];
+})();
