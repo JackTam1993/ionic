@@ -14,6 +14,7 @@
             $ionicConfigProvider.platform.android.views.maxCache(0);
 			$ionicConfigProvider.platform.android.tabs.style('standard');
             $ionicConfigProvider.platform.android.tabs.position('standard');
+            $ionicConfigProvider.navBar.alignTitle('center').positionPrimaryButtons('left');
 
 
              $ionicFilterBarConfigProvider.theme('positive');
