@@ -21,7 +21,8 @@
              {name:'changepasswd',ctrl:'changepasswdCtrl',url:'business/changepasswd/:name',tpl:'business/changepasswd/changepasswd'},
              {name:'jtsf',ctrl:'jtsfCtrl',url:'business/jtsf/:name',tpl:'business/jtsf/jtsf'},
              {name:'gxysf',ctrl:'gxysfCtrl',url:'business/gxysf/:name',tpl:'business/gxysf/gxysf'},
-             {name:'pdf',ctrl:'pdfCtrl',url:'business/pdf',tpl:'business/pdf/generic/web/viewer'}
+             {name:'myWork',ctrl:'myWorkCtrl',url:'business/myWork',tpl:'business/myWork/myWork'},
+             {name:'pdf',ctrl:'pdfCtrl',url:'business/pdf/:url',tpl:'business/pdf/pdf'}
         ];
 
         setRoutes = function (route) {

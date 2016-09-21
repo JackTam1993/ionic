@@ -131,6 +131,12 @@ article {
 
 .orderlist-bg{background: #eee;font-family: Helvetica Neue, Helvetica, Arial, sans-serif;font-size: 16px;color: #000;margin: 0;padding: 0;overflow-x: hidden;
 	min-height:100vh;}
+
+.scroll-wrapper {  
+    -webkit-overflow-scrolling: touch;  
+    overflow-y: scroll;  
+    /* 提示: 请在此处加上需要设置的大小(dimensions)或位置(positioning)信息! */  
+}  	
 /*----------------滑动模块 start-----------------------*/
 .swiper-body {background: #eee;font-family: Helvetica Neue, Helvetica, Arial, sans-serif;font-size: 14px;color: #000;margin: 0;padding: 0;overflow-x: hidden;}
 .swiper-container {width: 100%;}

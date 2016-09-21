@@ -19,8 +19,9 @@
             sessionStorage.clear();
             $state.go("BusinessLogin")
         };
-        $scope.gotoPdf = function(){
-            $state.go('pdf');
+        $scope.gotoPdf = function(pdfurl){
+            $state.go('pdf' ,{url: pdfurl});
+            console.log(pdfurl)
         };
 
         var filterBarInstance;
