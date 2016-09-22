@@ -5,9 +5,7 @@
         </div>
         <h1 class="title">test</h1>
     </ion-header-bar>
-    <ion-content scroll="true" class="has-header no-padding" overflow-scroll="true">
-        <ion-scroll zooming="true" direction="xy" style="width: 100%; height: 100%">
-        <iframe width="100%" height="100%" data-tap-disabled="false" ng-src="{{paySrc}}"></iframe>
-        </ion-scroll>
+    <ion-content scroll="true" class="has-header no-padding" style="-webkit-overflow-scrolling:touch; overflow: scroll">
+        <iframe width="610px" height="50000px" data-tap-disabled="false" ng-src="{{paySrc}}" scrolling="no"></iframe>
     </ion-content>
 </ion-view>

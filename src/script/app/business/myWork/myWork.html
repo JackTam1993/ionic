@@ -9,18 +9,20 @@
       </div>
     </ion-header-bar>
     <ion-header-bar class="bar-subheader">
-      <div class="buttons" id="subheader_button">
-        <button class="button button-positive">待签约</button>
-        <button class="button button-positive">待随访</button>
-      </div>
+        <ion-scroll direction="x" style="width: 100%; height: 4em;white-space: nowrap;text-align:center;">
+            <div style="width: 100%; height: 4em; cursor: url(), auto;">
+            <button class ="button button">待签约</button>
+            <button class ="button button">待随访</button>
+            </div>
+        </ion-scroll>
     </ion-header-bar>
     <ion-content>
-      <ion-list>
         <a class="item item-avatar" href="#">
             <img src="assets/images/default_icon.png">
-            <h2>阿牛</h2>
-            <p>签约内容：高血压服务预案</p>
-        </a>
-      </ion-list>
+            <h2>姓名：阿牛</h2>
+            <p>随访内容：高血压服务预案</p>
+            <p>时间：2016-9-2</p>
+        </a> 
     </ion-content>
+    
 </ion-view>
