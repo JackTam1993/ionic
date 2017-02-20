@@ -55,5 +55,14 @@
   "bugs": {
     "url": "https://github.com/syun0216/ionicWechat/issues"
   },
-  "homepage": "https://github.com/syun0216/ionicWechat#readme"
+  "homepage": "https://github.com/syun0216/ionicWechat#readme",
+  "cordovaPlugins": [
+    "cordova-plugin-whitelist",
+    "cordova-plugin-statusbar",
+    "cordova-plugin-console",
+    "cordova-plugin-device",
+    "cordova-plugin-splashscreen",
+    "ionic-plugin-keyboard"
+  ],
+  "cordovaPlatforms": []
 }

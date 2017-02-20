@@ -1,25 +1,25 @@
 * {
-	margin: 0;
-	padding: 0
+    margin: 0;
+    padding: 0
 }
 
 body {
-	/*font-size: 12px;*/
-	font-family: arial;
-	-webkit-text-size-adjust: none;
-	line-height: 1.62;
-	/*background-color: #000;*/
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /*font-size: 12px;*/
+    font-family: arial;
+    -webkit-text-size-adjust: none;
+    line-height: 1.62;
+    /*background-color: #000;*/
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 body,
 html {
-	width: 100%;
+    width: 100%;
 }
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0
+    border-collapse: collapse;
+    border-spacing: 0
 }
 
 h1,
@@ -28,76 +28,83 @@ h3,
 h4,
 h5,
 h6 {
-	font-size: 100%;
-	font-weight: normal
+    font-size: 100%;
+    font-weight: normal
 }
 
 ul,
 ol,
 li {
-	list-style: none;
+    list-style: none;
 }
 
 ul,
 li {
-	padding: 0;
-	margin: 0;
-	/*width: 100%;*/
+    padding: 0;
+    margin: 0;
+    /*width: 100%;*/
 }
 
 em {
-	font-style: normal
+    font-style: normal
 }
 
 img {
-	border: none;
+    border: none;
 }
 
 input,
 img {
-	vertical-align: middle;
+    vertical-align: middle;
 }
 
 input,
 select,
 textarea {
-	outline: 0;
-	-webkit-appearance: none
+    outline: 0;
+    -webkit-appearance: none
 }
 
 q:before,
 q:after {
-	content: ''
+    content: ''
 }
+
 dd {
     display: block;
-/*    -webkit-margin-start: 0px !important;*/
+    /*    -webkit-margin-start: 0px !important;*/
 }
-input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{	-webkit-appearance: none !important;	margin: 0; background: rgba(0,0,0,0);}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0;
+    background: rgba(0, 0, 0, 0);
+}
 
 .fn-clear:after {
-	visibility: hidden;
-	display: block;
-	font-size: 0;
-	content: " ";
-	clear: both;
-	height: 0;
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
 }
 
 .fn-clear {
-	*zoom: 1;
-	clear: both;
+    *zoom: 1;
+    clear: both;
 }
 
 a {
-	color: #666;
-	text-decoration: none;
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    color: #666;
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 a:active {
-	color: #333;
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    color: #333;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 section,
@@ -106,7 +113,7 @@ header,
 footer,
 hgroup,
 article {
-	display: block
+    display: block
 }
 
 .row-listmg {
@@ -114,95 +121,329 @@ article {
     margin-left: 10px !important;
 }
 
-.not_mg{
-	margin-right:0px !important;
+.not_mg {
+    margin-right: 0px !important;
     margin-left: 0px !important;
 }
 
-.imgwidht{width: 100%;}
+.imgwidht {
+    width: 100%;
+}
 
-.clear-float:after {clear: both;display: block;	visibility: hidden;	height: 0;	line-height: 0;	content: '';}
+.clear-float:after {
+    clear: both;
+    display: block;
+    visibility: hidden;
+    height: 0;
+    line-height: 0;
+    content: '';
+}
 
-.float-l {float: left;}
+.float-l {
+    float: left;
+}
 
-.float-r {float: right;}
+.float-r {
+    float: right;
+}
 
-.waterindex{background: #eee;font-family: Helvetica Neue, Helvetica, Arial, sans-serif;font-size: 16px;color: #000;margin: 0;padding: 0;overflow-x: hidden}
+.waterindex {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden
+}
 
-.orderlist-bg{background: #eee;font-family: Helvetica Neue, Helvetica, Arial, sans-serif;font-size: 16px;color: #000;margin: 0;padding: 0;overflow-x: hidden;
-	min-height:100vh;}
+.orderlist-bg {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
 
-.scroll-wrapper {  
-    -webkit-overflow-scrolling: touch;  
-    overflow-y: scroll;  
-    /* 提示: 请在此处加上需要设置的大小(dimensions)或位置(positioning)信息! */  
-}  	
+.scroll-wrapper {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
+    /* 提示: 请在此处加上需要设置的大小(dimensions)或位置(positioning)信息! */
+}
+
+
 /*----------------滑动模块 start-----------------------*/
-.swiper-body {background: #eee;font-family: Helvetica Neue, Helvetica, Arial, sans-serif;font-size: 14px;color: #000;margin: 0;padding: 0;overflow-x: hidden;}
-.swiper-container {width: 100%;}
-.swiper-slide {text-align: center;font-size: 18px;background: #fff;	display: -webkit-box;
-				display: -ms-flexbox;
-				display: -webkit-flex;
-				display: flex;
-				-webkit-box-pack: center;
-				-ms-flex-pack: center;
-				-webkit-justify-content: center;
-				justify-content: center;
-				-webkit-box-align: center;
-				-ms-flex-align: center;
-				-webkit-align-items: center;
-				align-items: center;
-			}
+
+.swiper-body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.swiper-container {
+    width: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
 
 /*----------------滑动模块 end-----------------------*/
 
-.body-bg{background: #F0F0F0 !important;}
+.body-bg {
+    background: #F0F0F0 !important;
+}
+
 
 /*头部标题 start*/
+
 .content_title {
-	position: relative;
-	background: #FD5858;
-	color: #fff;
-	padding: 0.6em 0em;
-	top: 0;
-	left: 0;
-	font-size: 16px;
+    position: relative;
+    background: #FD5858;
+    color: #fff;
+    padding: 0.6em 0em;
+    top: 0;
+    left: 0;
+    font-size: 16px;
 }
 
 .content_title .back_arrow {
-	display: inline-block;
-	margin-left: 1em;
-	width: 10px;
+    display: inline-block;
+    margin-left: 1em;
+    width: 10px;
 }
 
 .content_title .back_arrow img {
-	width: 8px;
+    width: 8px;
 }
 
 .content_title .title {
-	display: inline-block;
-	position: absolute;
-	left: 40%;
-	top: 11px;
+    display: inline-block;
+    position: absolute;
+    left: 40%;
+    top: 11px;
 }
 
 .content_title .buy {
-	display: inline-block;
-	position: absolute;
-	right: 4%;
-	top: 10px;
+    display: inline-block;
+    position: absolute;
+    right: 4%;
+    top: 10px;
     font-size: 14px;
 }
 
+
 /*进度条选中状态公用样式  start*/
-.act-circle{border: 1px solid #ff5858 !important; background: #ff5858 !important;}
-.act-border{border: 1px solid #ff5858 !important;}
+
+.act-circle {
+    border: 1px solid #ff5858 !important;
+    background: #ff5858 !important;
+}
+
+.act-border {
+    border: 1px solid #ff5858 !important;
+}
+
+
 /*进度条选中状态公用样式  end*/
 
-.margin{
-	margin-left: 6px;
-	margin-right:6px;
+.margin {
+    margin-left: 6px;
+    margin-right: 6px;
 }
-.border_bottom{
-	border-bottom: 1px solid #ddd;
+
+.border_bottom {
+    border-bottom: 1px solid #ddd;
+}
+
+
+/*几种通用颜色样式 #chenshikun 20160925 start*/
+
+.color-red {
+    color: red;
+}
+
+.color-green {
+    color: green;
+}
+
+.color-blue {
+    color: blue;
+}
+
+.color-white {
+    color: white;
+}
+
+.color-black {
+    color: black;
+}
+
+.color-grey {
+    color: grey;
+}
+
+.color-grey2 {
+    color: #ddd;
+}
+
+
+/*几种通用颜色样式 end*/
+
+
+/*字体加粗*/
+
+.font-bold {
+    font-weight: bold;
+}
+
+
+/*去除边界border*/
+
+.border-none {
+    border: none;
+}
+
+.width-5 {
+    width: 5%;
+}
+
+.width-33 {
+    width: 33%;
+}
+
+.width-50 {
+    width: 50%;
+}
+
+.undis {
+    display: none;
+}
+
+#ulist {
+    line-height: 0;
+    margin-top: 10px;
+    margin-left: 7%;
+}
+
+#ulist li {
+    width: 46.5%;
+    display: inline-block;
+    padding: 0;
+}
+
+
+/*#ulist li input{
+    height:22px;
+    width:22px;
+}*/
+
+#alabel {
+    padding-top: 10px;
+}
+
+#alabel label {
+    margin-left: 20%;
+}
+
+.padding-5 {
+    padding: 5px;
+}
+
+.padding-10 {
+    padding: 10px;
+}
+
+.no-padding-top-bottom {
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+.padding-top5 {
+    padding-top: 5px;
+}
+
+.padding-bottom5 {
+    padding-bottom: 5px;
+}
+
+.toggle-p {
+    text-align: center;
+    padding-top: 2px;
+    font-size: 8px;
+}
+
+.font-12 {
+    font-size: 12px !important;
+}
+
+.font-14 {
+    font-size: 14px !important;
+}
+
+.font-16 {
+    font-size: 16px !important;
+}
+
+.padding-bottom0 {
+    padding-bottom: 0 !important;
+}
+
+.font-center {
+    text-align: center;
+}
+
+.button-cancel {
+    color: #fff;
+    background-color: #ccc;
+}
+
+.visi-h {
+    visibility: hidden;
+}
+
+.visi-v {
+    visibility: visible;
+}
+
+.treat-record span {
+    font-size: 12px;
+}
+
+.margin-t10 {
+    margin-top: 10px;
+}
+
+
+/* 确认信息弹出框取消按钮图标 */
+
+.confirm-cancel {
+    position: absolute;
+    right: 0px;
+    top: -5px;
+    width: 35px;
+    height: 35px;
+    padding: 12px;
 }

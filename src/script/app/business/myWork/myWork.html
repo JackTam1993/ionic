@@ -1,28 +1,70 @@
-<ion-view>
-      <ion-header-bar class="bar-light">
-      <div class="buttons">
-        <button class="button button-icon ion-chevron-left" ng-click="goBack()"></button>
-      </div>
-      <h1 class="title">我的工作</h1>
-      <div class="buttons">
-        <button class="button button-icon ion-search"></button>
-      </div>
-    </ion-header-bar>
-    <ion-header-bar class="bar-subheader">
-        <ion-scroll direction="x" style="width: 100%; height: 4em;white-space: nowrap;text-align:center;">
-            <div style="width: 100%; height: 4em; cursor: url(), auto;">
-            <button class ="button button">待签约</button>
-            <button class ="button button">待随访</button>
-            </div>
-        </ion-scroll>
-    </ion-header-bar>
-    <ion-content>
-        <a class="item item-avatar" href="#">
-            <img src="assets/images/default_icon.png">
-            <h2>姓名：阿牛</h2>
-            <p>随访内容：高血压服务预案</p>
-            <p>时间：2016-9-2</p>
-        </a> 
-    </ion-content>
-    
+<ion-view cache-view="false" class="item-text-wrap">
+    <ion-side-menus>
+        <ion-side-menu-content drag-content="false">
+            <ion-view>
+                <ion-header-bar class="bar-light">
+                    <div class="buttons">
+                        <button class="button button-icon ion-ios-arrow-left" ng-click="goBack()"></button>
+                    </div>
+                    <h1 class="title">我的工作</h1>
+                    <!-- <div class="buttons" ng-show='show'>
+                        <button class="button button-icon ion-navicon-round" menu-toggle="right"></button>
+                    </div> -->
+                </ion-header-bar>
+                <ion-content class="">
+                <div class="row">
+                    <div class="col-33 row_item">
+                        <img src="assets/images/default_icon.png" height="60%" width="60%" ng-click="gotolist()">
+                        <p>待办事项</p>
+                    </div>
+                    <div class="col-33 row_item">
+                        <img src="assets/images/default_icon.png" height="60%" width="60%" ng-click="gotoSchedule()">
+                        <p>日程排班</p>
+                    </div>
+                    <div class="col-33 row_item">
+                        <img src="assets/images/default_icon.png" height="60%" width="60%">
+                        <p>预约管理</p>
+                    </div>
+                </div>
+                    <!-- <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher> -->
+                    <!-- <div class="position-rt bg-white" ng-repeat="detail in myworkDetail.result|filter:searchText" id="dqy-cont">
+                        <div>
+                            <span class="calm timer">{{detail.operate_time|limitTo:10|limitTo:-5}}{{detail.next_date|limitTo:10|limitTo:-5}}</span>
+                            <img class="timer-img" src="assets/images/visit_time_red.png">
+                        </div>
+                        <a class="item item-avatar item2 border-none" ng-click="goForDetail(detail.person_name,detail.person_id,detail.sex,detail.age,detail.pkg_type)">
+                            <img class="margin-lt40" src="assets/images/default_icon.png">
+                            <div class="margin-top2">
+                                <h2 class="float-lt width60">{{detail.person_name}}</h2>
+                                <p class="float-lt margin-rt5">{{detail.sex}}</p>
+-->
+                                <!--年龄-->
+                                <!-- <p>{{detail.name}}</p> -->
+                                <!-- <p>{{detail.contact_address}}</p> -->
+<!--                             </div>
+                        </a>
+                        <div class="border-lt">
+                        </div> 
+                    </div> -->
+                </ion-content>
+            </ion-view>
+        </ion-side-menu-content>
+        <!-- <ion-side-menu side="right" width="250">
+            <ion-view view-title="随访内容">
+                <ion-header-bar>
+                    <ion-nav-bar>
+                        <ion-nav-title>
+                            <span>随访内容</span>
+                        </ion-nav-title>
+                    </ion-nav-bar>
+                </ion-header-bar>
+                <ion-content class="bg-gray2">
+                    <ion-list>
+                        <ion-item menu-close ng-click="seecontendSuifang_gxy()">公共卫生-高血压</ion-item>
+                        <ion-item menu-close ng-click="seecontendSuifang_tnb()">公共卫生-糖尿病</ion-item>
+                    </ion-list>
+                </ion-content>
+            </ion-view>
+        </ion-side-menu> -->
+    </ion-side-menus>
 </ion-view>

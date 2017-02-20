@@ -27,6 +27,12 @@
     "jquery": "^2.2.3",
     "ng-file-upload": "~12.0.4",
     "angular-pdf-viewer": "^0.2.9",
-    "ng-pdfviewer": "^0.2.1"
+    "ng-pdfviewer": "^0.2.1",
+    "cordova": "^3.4.0",
+    "ngCordova": "^0.1.27-alpha",
+    "calendar-pk": "^0.3.10"
+  },
+  "devDependencies": {
+    "ngCordova": "^0.1.27-alpha"
   }
 }
